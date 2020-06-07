@@ -1,0 +1,262 @@
+
+<div class="user-dashboard">
+    <div class="">
+        <div class="">
+            <form autocomplete="off" >
+                <div class="col-md-12">
+                    <div class="pull-left">
+                        <a class="btn btn-default" href="" data-toggle="collapse" data-target="#addBook" ng-click="vm.agregar()">
+                            <span ng-show="vm.showAgregar==true"><i class="fa-window-close"></i>&nbsp;cancelar libro</span>
+                            <span ng-show="vm.showAgregar==false"><i class="fa fa-plus"></i>&nbsp;Agregar libro</span>
+                        </a>
+                    </div>
+                    <div class="pull-right">
+                        <a class="btn btn-default" href="">
+                            <i class="fa fa-cloud-download "></i>
+                            <span class="hidden-xs">Exportar</span>
+                        </a>
+                        <a class="btn btn-default" href="">
+                            <i class="fa fa-print "></i>
+                            <span class="hidden-xs ">Imprimir</span>
+                        </a>
+                        <a class="btn btn-primary search-button ">
+                            <i class="fa fa-search"></i>
+                            <input type="text" name="search" class="search-input" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-12 collapse" id="addBook">
+                    <form class="form-horizontal"></form>
+                    <form class="form-horizontal">
+                        <legend>Agregar Libro</legend>
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="titulo">Titulo</label>  
+                          <div class="col-md-5">
+                            <input name="titulo" type="text" ng-model="vm.formulario.titulo" placeholder="Titulo" class="form-control input-sm" > 
+                          </div>
+                        </div>
+
+                        <div class="form-group" >
+                          <label class="col-md-4 control-label" for="autor">autor</label>
+                          <div class="col-md-5">
+                            <input name="autor" type="text" ng-model="vm.formulario.autor" placeholder="autor" class="form-control input-sm" >
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="descripcion">Descripcion</label>  
+                            <div class="col-md-5">
+                               <textarea class="form-control" ng-model="vm.formulario.descripcion" name="descripcion"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="editorial">Editorial</label>  
+                            <div class="col-md-5">
+                                <input  name="editorial" ng-model="vm.formulario.editorial" type="text" class="form-control input-sm" >                       
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="imagen">Imagen</label>  
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                        <span class="btn btn-primary">
+                                            Browse&hellip; <input type="file" style="display: none;" files-model="newImage.image" onchange="angular.element(this).scope().photoChanged(this.files)" >
+                                        </span>
+                                    </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                <div class="row">
+                                  <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                      <img src="{{thumbnail.dataUrl}}" alt="imagen">
+                                    </a>
+                                  </div>
+                                </div>                       
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="ejemplares">Numero de ejemplares</label>
+                          <div class="col-md-5">
+                            <input  name="ejemplares" ng-model="vm.formulario.ejemplares" type="text" class="form-control input-sm" >                       
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="area">Area</label>
+                          <div class="col-md-5">
+                            <input  name="area" type="text" ng-model="vm.formulario.area" placeholder="Area" class="form-control input-sm" >                       
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" ng-model="vm.formulario.carrera" for="carrera">Carrera</label>
+                          <div class="col-md-5">
+                            <select name="carrera" class="form-control input-sm">
+                                <option>ADMINISTRACIÓN Y NEGOCIOS INTERNACIONALES</option>
+                                <option>CONTABILIDAD Y FINANZAS</option>
+                                <option>DERECHO Y CIENCIAS POLÍTICAS</option>
+                                <option>ECOTURISMO</option>
+                                <option>EDUCACIÓN ESPECIALIDAD: MATEMÁTICAS Y COMPUTACIÓN</option>
+                                <option>EDUCACIÓN INICIAL Y ESPECIAL</option>
+                                <option>EDUCACIÓN PRIMARIA E INFORMÁTICA</option>
+                                <option>ENFERMERÍA</option>
+                                <option>INGENIERÍA AGROINDUSTRIAL</option>
+                                <option>INGENIERÍA DE SISTEMAS E INFORMÁTICA</option>
+                                <option>INGENIERÍA FORESTAL Y MEDIO AMBIENTE</option>
+                                <option>MEDICINA VETERINARIA Y ZOOTECNIA</option>
+                                <option></option>
+                            </select>
+                          </div>
+                        </div>
+                        <!-- Button -->
+                        <div class="form-group">
+                          <label class="col-md-4 control-label" for="submit"></label>
+                          <div class="col-md-4">
+                            <a class="btn btn-default" ng-click="vm.guardar()" href=""><i class="fa fa-floppy-o text-success"></i><span class="text-success">Guardar</span></a>
+                            <a class="btn btn-default" ng-click="vm.editar()" href=""><i class="fa fa-pencil text-primary"></i><span class="text-primary">Editar</span></a>
+                            <a class="btn btn-default" href=""><i class="fa fa-trash-o text-danger"></i><span class="text-danger">Borrar</span></a>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-12">
+                    <table class="table grocery-crud-table table-hover">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" class="select-row" /></th>
+                                <th class="">Acciones</th>
+                                <th class="">Tìtulo</th>
+                                <th class="">Autor</th>
+                                <th class="">Ejemplares</th>
+                                <th class="">Area</th>
+                                <th class="">Carrera</th>
+                                <th class="">Editorial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-toggle="collapse" data-target="#addBook">
+                                <td><input type="checkbox" class="select-row"/></td>
+                                <td>
+                                    <a class="btn btn-default" href="" ng-click="vm.view()">
+                                        <i class="fa fa-eye text-info"></i><span class="text-info">View</span>
+                                    </a>                                   
+                                    <a class="btn btn-default" href="">
+                                        <i class="fa fa-trash-o text-danger"></i><span class="text-danger">Borrar</span>
+                                    </a>
+                                </td>
+                                <td>hola amiguito{{a.titulo}}</td>
+                                <td>hola amiguito{{a.autor}}</td>
+                                <td>hola amiguito{{a.ejemplares}}</td>
+                                <td>hola amiguito{{a.area}}</td>
+                                <td>hola amiguito{{a.carrera}}</td>
+                                <td>hola amiguito{{a.editorial}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="footer-tools">
+                    <div class="col-md-4">
+                        <div class="">Show</div>
+                        <div class="">
+                            <select name="per_page" class="form-control">
+                                <option value="10" selected="selected">10&nbsp;&nbsp;</option>
+                                <option value="25">25&nbsp;&nbsp;</option>
+                                <option value="50">50&nbsp;&nbsp;</option>
+                                <option value="100">100&nbsp;&nbsp;</option>
+                            </select>
+                        </div>
+                        <div class="">entries</div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="pagination">
+                            <li class="disabled paging-first"><a href="#"><i class="fa fa-step-backward"></i></a></li>
+                            <li class="disabled paging-previous"><a href="#"><i class="fa fa-chevron-left"></i></a></li>
+                            <li >
+                                <span class=" ">
+                                    <input type="number" value="1" class="form-control input-sm page-number-input" />
+                                </span>
+                            </li>
+                            <li class="next paging-next"><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                            <li class="paging-last"><a href="#"><i class="fa fa-step-forward"></i></a></li>
+                        </ul>
+                        <input type="hidden" name="page_number" class="page-number-hidden" value="1" />
+                        <div class="btn-group settings-button-container"">
+                            <button type="button" class="btn btn-default gc-bootstrap-dropdown settings-button dropdown-toggle">
+                                <i class="fa fa-cog r5"></i>
+                                <span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a href="" class="clear-filtering">
+                                        <i class="fa fa-eraser"></i> Limpiar filtros
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        Displaying 
+                        <span class="paging-starts">1</span> to 
+                        <span class="paging-ends">10</span> of 
+                        <span class="current-total-results">122</span> items                                                
+                        <span class="full-total-container hidden">(filtered from 
+                        <span class='full-total'>122</span> total entries)</span>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- modal1 -->
+    <div class="delete-confirmation modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Delete</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure that you want to delete this record?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger delete-confirmation-button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal1 -->
+    
+    <!-- modal2 -->
+    <div class="delete-multiple-confirmation modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Delete</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="alert-delete-multiple hidden">
+                        Are you sure that you want to delete those <span class="delete-items-amount"></span> items?                            </p>
+                    <p class="alert-delete-multiple-one hidden">
+                        Are you sure that you want to delete this 1 item?                            </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Cancel                            </button>
+                    <button type="button" class="btn btn-danger delete-multiple-confirmation-button"
+                            data-target="/demo/bootstrap_theme/delete_multiple">
+                        Delete                            </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal2 -->
+
+</div>
+<!-- view

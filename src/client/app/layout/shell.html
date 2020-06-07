@@ -1,0 +1,24 @@
+<div ng-controller="Shell as vm">
+   <div id="splash-page" ng-show="vm.showSplash" class="dissolve-animation">
+        <div class="page-splash">
+            <div class="page-splash-message">
+                Biblioteca App
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <!-- sidebar -->
+            <div ng-include="'app/layout/sidebar.html'"></div>
+            <!-- fin de sidebar -->
+            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+                <!-- topnav -->
+                <div ng-include="'app/layout/topnav.html'"></div>
+                 <!-- fin de topnav -->
+                <div ui-view class="shuffle-animation"></div>
+            </div>
+
+        </div>
+    </div>
+</div>

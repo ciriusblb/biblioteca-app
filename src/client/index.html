@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="app.main">
+<head>
+    <meta charset="utf-8">
+	<title ng-bind="title"></title>
+	<link rel="stylesheet" href="content/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="content/css/styles.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="content/css/toastr.min.css"/>
+    <link rel="stylesheet" href="content/css/estilos.css">
+
+</head>
+<body>
+
+	<div ng-include="'app/layout/shell.html'"></div>
+
+    <!-- vendor-->
+    <script src="scripts/jquery-2.1.4.min.js"></script>
+    <script src="scripts/jquery.resize.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/angular-ui-router.min.js"></script>
+     <script src="scripts/angular-resource.min.js"></script>
+    
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/toastr.min.js"></script>
+    <script src="scripts/angular-gridster.js"></script>
+
+
+
+
+    <script src="app/app.module.js"></script>
+
+    <script src="app/blocks/logger/logger.module.js"></script>
+    <script src="app/blocks/logger/logger.js"></script>
+    <script src="app/blocks/exception/exception.module.js"></script>
+    <script src="app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="app/blocks/exception/exception.js"></script>
+    <script src="app/blocks/router/router.module.js"></script>
+    <script src="app/blocks/router/routehelper.js"></script>
+
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/constants.js"></script>
+    <script src="app/core/config.js"></script>
+
+    <script src="app/data/dataservice.module.js"></script>
+    <!-- <script src="app/data/dataservice.js"></script> -->
+    <script src="app/data/resource.js"></script>
+
+
+    <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/shell.js"></script>
+    <script src="app/layout/sidebar.js"></script>
+
+    <script src="app/CRUD/CRUD.module.js"></script>
+    <script src="app/CRUD/config.route.js"></script>
+    <script src="app/CRUD/CRUD.js"></script>
+
+    <script src="app/historial/historial.module.js"></script>
+    <script src="app/historial/config.route.js"></script>
+    <script src="app/historial/historial.js"></script>
+
+    <script src="app/widgets/widgets.module.js"></script>
+    <script src="app/widgets/filesModel.js"></script>
+
+
+    <!-- <script src="content/js/index.js"></script> -->
+
+    <style type="text/css">
+    .switch-versions-container {
+        position: relative;
+        text-align: center;
+        z-index: 999999;
+        width: 400px;
+        margin: 5px auto;
+    }
+
+    @media (max-width: 991px) {
+        .switch-versions-container {
+            display: none;
+        }
+    }
+</style>
+</body>
+</html>

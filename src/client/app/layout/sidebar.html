@@ -1,0 +1,16 @@
+<!-- sidevar -->
+     <div ng-controller="Sidebar as vm" class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box " id="navigation">
+        <div class="logo">
+             <a hef="home.html"><img src="" alt="merkery_logo" class="hidden-xs hidden-sm">
+                <img src="" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
+            </a>
+        </div>
+        <div class="navi">
+            <ul>
+                <li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
+                    <a ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+            <!-- sidebar -->
